@@ -1,0 +1,171 @@
+@headerHeight: 64px;
+
+#mainContent {
+  .img img {
+    width: 146px;
+  }
+
+  #topHeader {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // padding: 0 23px;
+    padding: 0 14px;
+    background: linear-gradient(270deg, #FA6F19 0%, #EE452D 13%, #E11643 28%, #EF272C 93%, #DE116A 100%);
+    // background: url('~common/images/headerTitle.png') no-repeat;
+    // background-size: cover;
+    color: #fff;
+    height: @headerHeight;
+    box-shadow: 0px 2px 4px 0px #cccccc; 
+    position: relative;
+
+    .main-header-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 28px;
+      background: linear-gradient(180deg, #FFFCEB 0%, #FFD2CA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      .system_logo {
+        // width: 68px;
+        // height: 38px;
+        display: inline-block;
+        // background: url('~common/images/logo.png') no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: 6px;
+      }
+      span:last-child {
+        // text-shadow: 0px 2px 4px #000; 
+      }
+    }
+
+    .h-handler {
+      padding: 0 10px 0 14px;
+      display: inline-block;
+
+    }
+
+    .address {
+      height: 26px;
+      line-height: 26px;
+      color: #fff;
+      background: linear-gradient(270deg, rgba(218, 55, 55, 0.52) 0%, rgba(179, 26, 26, 0.52) 100%);
+      border-radius: 13px;
+      padding: 0 16px;
+      i {
+        margin-right: 6px;
+        font-size: 14px;
+      }
+    }
+
+    .avatar {
+      margin-right: 4px;
+      width: 34px;
+      // height: 64px;
+    }
+
+    .quit-button {
+      color: #fff;
+      height: 26px;
+      line-height: 0;
+      background: #FF8033;
+      padding: 0 10px;
+    }
+
+    .el-dropdown {
+      line-height: 38px;
+    }
+
+    .dropdown-link {
+      color: #fff;
+      cursor: pointer;
+      // border-right: 2px solid #4D77FC;
+    }
+  }
+
+  .cont-left {
+    // background: linear-gradient(360deg, #EEEEEE 0%, #FF6868 40%);
+    background: url('~common/images/mainView/sideMenuBcg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 220px;
+    top: @headerHeight;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    transition: width 0.5s;
+    overflow: hidden;
+    overflow-y: auto;
+
+    // box-shadow: 0px 0px 7px 0px rgba(198, 198, 198, 0.5);
+    &::after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: linear-gradient(180deg, #E4E3E3 0%, #D4D4D4 100%);
+
+    }
+
+    // 滚动条
+    &::-webkit-scrollbar-track-piece {
+      //滚动条凹槽的颜色，还可以设置边框属性
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      //滚动条的宽度
+      width: 2px;
+      height: 2px;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      //滚动条的设置
+      background-color: transparent;
+      background-clip: padding-box;
+      min-height: 28px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: transparent;
+    }
+  }
+
+  .cont-right {
+    top: @headerHeight;
+    bottom: 0;
+    left: 220px;
+    right: 0;
+    background: #ffffff;
+    transition: left 0.5s;
+    overflow-x: hidden;
+  }
+
+
+  // 动画
+  .fadeInUp-enter-active,
+  .fadeInUp-leave-active {
+    transition: 0.2s all;
+  }
+
+  .fadeInUp-enter {
+    top: 200%;
+    opacity: 0;
+  }
+
+  .fadeInUp-enter-to,
+  .fadeInUp-leave {
+    top: 100%;
+    opacity: 1;
+  }
+}
